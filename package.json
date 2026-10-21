@@ -1,0 +1,21 @@
+{
+  "name": "bocca-web",
+  "version": "1.0.0",
+  "description": "Da Maria - Ristorante Italiano broadsheet vintage website",
+  "main": "serve.js",
+  "scripts": {
+    "dev": "node serve.js",
+    "start": "node serve.js",
+    "serve": "node serve.js"
+  },
+  "keywords": [
+    "restaurant",
+    "vintage",
+    "editorial",
+    "italian",
+    "webflow",
+    "broadsheet"
+  ],
+  "author": "Bastian / BOCCA",
+  "license": "ISC"
+}
