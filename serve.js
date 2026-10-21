@@ -15,6 +15,8 @@ const MIME_TYPES = {
   '.webp': 'image/webp',
   '.avif': 'image/avif',
   '.svg': 'image/svg+xml',
+  '.xml': 'application/xml; charset=UTF-8',
+  '.txt': 'text/plain; charset=UTF-8',
   '.ttf': 'font/ttf',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2'
@@ -47,5 +49,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Da Maria Website is running at http://localhost:${PORT}/`);
+  console.log(`BOCCA Italian Coffee & Pizza House website running at http://localhost:${PORT}/`);
 });

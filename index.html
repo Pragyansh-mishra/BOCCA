@@ -3,510 +3,582 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Da Maria — Ristorante Italiano | Roma 1993</title>
-  <meta name="description" content="Da Maria is a cozy, family-run Italian trattoria in the heart of Rome, offering traditional homemade dishes, fresh ingredients, and a warm, authentic atmosphere.">
   
+  <!-- SEO & Brand Meta -->
+  <title>BOCCA Italian Coffee & Pizza House | Dungarpur</title>
+  <meta name="description" content="Explore pizzas, pasta, burgers, sandwiches, coffee, milkshakes, desserts, and more at BOCCA Italian Coffee & Pizza House in Dungarpur, Rajasthan.">
+  <meta name="keywords" content="BOCCA, BOCCA Dungarpur, Italian Coffee and Pizza House, Dungarpur Cafe, Pizza Dungarpur, Coffee Shop Rajasthan 314001">
+  <meta name="author" content="BOCCA Italian Coffee & Pizza House">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="BOCCA Italian Coffee & Pizza House | Dungarpur">
+  <meta property="og:description" content="Discover artisanal pizzas, comforting pasta, handcrafted coffee, milkshakes, and desserts at BOCCA in Dungarpur, Rajasthan.">
+  <meta property="og:image" content="assets/media/bocca_pizza_hero.jpg">
+  <meta property="og:locale" content="en_IN">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/media/684ff15232c39faab7fcc3a5_Favicon.png">
-  <link rel="apple-touch-icon" href="assets/media/684ff16a4f608d402e942810_Display.png">
 
-  <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <!-- Google Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/bocca.css">
+
+  <!-- LocalBusiness Schema (Structured Data with provisional disclaimer) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "BOCCA Italian Coffee & Pizza House",
+    "alternateName": "BOCCA",
+    "image": "assets/media/bocca_pizza_hero.jpg",
+    "telephone": "+919976988888",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Police Line Colony, Shivaji Nagar, opposite Nikunj Plaza",
+      "addressLocality": "Dungarpur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "314001",
+      "addressCountry": "IN"
+    },
+    "servesCuisine": ["Italian", "Pizza", "Coffee", "Cafe", "Fast Food", "Bakery & Desserts"],
+    "priceRange": "$$",
+    "openingHours": "Mo-Su 08:00-23:00",
+    "url": "https://www.google.com/maps/search/?api=1&query=Bocca+Italian+Coffee+and+Pizza+House+Dungarpur",
+    "hasMenu": "https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order"
+  }
+  </script>
 </head>
 <body>
 
-  <!-- Fixed Subtle Vignette Backdrop -->
-  <div class="site-backdrop"></div>
-
-  <!-- Main Broadsheet Newspaper Wrapper -->
-  <div class="newspaper-wrapper">
-    <div class="page-inner">
+  <!-- Main Newspaper Broad-sheet Canvas -->
+  <div class="bocca-canvas">
+    <div class="bocca-inner-frame">
 
       <!-- ====================================================================
-           1. TOP HEADER & NAVIGATION
+           1. TOP NOTIFICATION / PROVISIONAL BANNER
            ==================================================================== -->
-      <header class="site-header">
-        <!-- Menu Drawer Trigger -->
-        <button type="button" class="header-menu-btn" id="openMenuBtn" onclick="openMenuDrawer()" aria-label="Open Navigation Menu">
-          <span class="menu-circle-badge">MENU</span>
-          <span class="cart-count-pill" id="cartCountPill" onclick="event.stopPropagation(); openCartDrawer();" title="View Pantry Basket">0</span>
-        </button>
+      <aside class="provisional-notice-banner" aria-label="Provisional Information Notice">
+        <strong>Business Notice:</strong> Dungarpur City location (Opp. Nikunj Plaza). Contact & hours are compiled from public listings pending owner confirmation.
+        <a href="tel:+919976988888" class="data-phone-link" style="color: inherit; text-decoration: underline; margin-left: 8px;">+91 99769 88888</a>
+      </aside>
 
-        <!-- Brand Box -->
-        <a href="index.html" class="header-brand">
-          <h1>DA MARIA</h1>
-          <span class="brand-sub">Restaurant</span>
+      <!-- ====================================================================
+           2. NAVIGATION BAR (Desktop & Mobile)
+           ==================================================================== -->
+      <header class="bocca-nav" id="mainHeader">
+        <!-- Brand Group -->
+        <a href="index.html" class="nav-brand-group" aria-label="BOCCA Home">
+          <div class="nav-brand-badge">
+            <span class="nav-brand-title">BOCCA</span>
+            <span class="nav-brand-subtitle">Italian Coffee & Pizza House</span>
+          </div>
         </a>
 
-        <!-- Reserve Pill Button -->
-        <button type="button" class="header-reserve-btn trigger-reserve-modal" onclick="openReservationModal()" aria-label="Book a Reservation">
-          RESERVE
-        </button>
+        <!-- Desktop Navigation Links -->
+        <nav class="nav-links" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="menu.html" class="nav-link">Menu</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#location" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Navigation Action Buttons -->
+        <div class="nav-actions">
+          <a href="menu.html" class="btn-bocca btn-bocca-primary" style="padding: 10px 20px; font-size: 0.85rem;">
+            Explore Menu
+          </a>
+          <a href="https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order" target="_blank" rel="noopener" class="btn-bocca btn-bocca-secondary data-zomato-link" style="padding: 10px 18px; font-size: 0.85rem;">
+            Order Online
+          </a>
+          
+          <!-- Hamburger Drawer Toggle for Mobile -->
+          <button type="button" class="nav-menu-toggle" id="openMobileNav" aria-label="Open Mobile Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </header>
 
       <!-- ====================================================================
-           2. HERO HEADLINE & INFINITE MARQUEE (SCREENSHOT 1)
+           3. HERO SECTION (Editorial Café Presentation)
            ==================================================================== -->
-      <section class="hero-marquee-section">
-        <!-- Floating Taste Award Rubber Stamp -->
-        <div class="hero-stamp-badge" title="Awarded Taste Award Dec 19 Roma 1993">
-          <img src="assets/media/682096c723c440bb82f105d4_StampNew.svg" alt="Taste Award Dec 19 Roma 1993 Stamp">
-        </div>
-
-        <!-- Marquee Ticker -->
-        <div class="marquee-container">
-          <div class="marquee-track" id="marqueeTrack">
-            <div class="marquee-item">DA MARIA</div>
-            <div class="marquee-glyph"></div>
-            <div class="marquee-item">DA MARIA</div>
-            <div class="marquee-glyph"></div>
-            <div class="marquee-item">DA MARIA</div>
-            <div class="marquee-glyph"></div>
-            <div class="marquee-item">DA MARIA</div>
-            <div class="marquee-glyph"></div>
-          </div>
-        </div>
-
-        <!-- Award Subtitle Line -->
-        <div class="hero-award-line">
-          <span class="award-text">Recently awarded on Taste Award</span>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           3. HERO PHOTOGRAPHY & STORY INTRO (SCREENSHOT 1)
-           ==================================================================== -->
-      <section class="hero-visual-section">
-        <div class="hero-image-frame">
-          <img src="assets/media/684945cf192e2cdba5198349_PastaDish.webp" 
-               alt="Traditional handmade pasta dish with wine glass at candlelit trattoria table in Rome">
-          <div class="hero-image-overlay"></div>
-        </div>
-        <div class="hero-story-card">
-          <p class="hero-story-text">
-            Da Maria is a cozy, family-run Italian restaurant in the heart of Rome, offering traditional homemade dishes, fresh ingredients, and a warm, authentic atmosphere loved by locals and visitors alike.
-          </p>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           4. MENU & RESERVE HIGHLIGHTS (SCREENSHOT 2)
-           ==================================================================== -->
-      <section class="split-editorial-section" id="menu-overview">
-        <!-- Left Column: Menu -->
-        <div class="menu-feature-col">
-          <div>
-            <h2 class="section-title-large">MENU</h2>
-            
-            <div class="menu-etching-frame">
-              <img src="assets/media/68503b4ff11739fb1a82d6e3_MenuNew.avif" 
-                   alt="Vintage plate with menu booklet and fork etching">
-            </div>
-
-            <div class="editorial-dropcap-block">
-              <div class="dropcap-box">C</div>
-              <p class="dropcap-body">
-                raving something real? Tap into our menu—bold flavors, handmade bites, and Roman soul in every dish. From classic pastas to modern twists, every plate tells a story. Whether you're a first-timer or a regular, there's always something new to savor. Click to explore the tastes that keep locals coming back—and leave a lasting impression.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <a href="menu.html" class="btn-roll">
-              <span class="roll-text-default">View Menu</span>
-              <span class="roll-text-hover">Explore Dishes</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Column: Reserve Quick-Card -->
-        <div class="reserve-feature-col">
-          <div class="reserve-header-card">
-            <div class="card-meta">Book Now</div>
-            <h3>RESERVE</h3>
-          </div>
-
-          <div class="phone-etching-frame">
-            <img src="assets/media/68483edd703f1b2a8930afa3_OldPhone.webp" 
-                 alt="Vintage rotary telephone illustration">
-          </div>
-
-          <a href="tel:+492025550888" class="reserve-phone-link">+49 202 555 0888</a>
-
-          <div class="info-bullet-list">
-            <div class="info-bullet-item">
-              <h4>OPENING TIMES</h4>
-              <p>Mon. Tues. Wedn. Thurs<br>06:30 – 22:00</p>
-            </div>
-
-            <div class="info-bullet-item">
-              <h4>ADRESS</h4>
-              <p>Via del Sole 48<br>10083 Roma, Italia</p>
-            </div>
-
-            <div class="info-bullet-item">
-              <h4>MAIL</h4>
-              <p>damaria@webflow.com<br>Via del Sole 48, Roma</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           5. WHO ARE WE / ABOUT STORY (SCREENSHOT 3)
-           ==================================================================== -->
-      <section class="about-section" id="about">
-        <!-- Left Text Column -->
-        <div class="about-text-col">
-          <div>
-            <div class="about-red-badge-card">
-              <div class="meta-top">Get to know us</div>
-              <h2>WHO<br>ARE WE</h2>
-            </div>
-
-            <div class="editorial-dropcap-block">
-              <div class="dropcap-box">W</div>
-              <p class="dropcap-body">
-                e’re not a concept. We’re a team of food lovers, storytellers, and detail-obsessed dreamers who care deeply about every plate that leaves the kitchen. Behind every dish is a conversation, a memory, a moment worth sharing. We believe in warmth that goes beyond the food, in creating spaces where people slow down, connect, and feel at home.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <a href="about.html" class="btn-roll">
-              <span class="roll-text-default">ABOUT</span>
-              <span class="roll-text-hover">Our Story</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Photo Column -->
-        <div class="about-image-col">
-          <img src="assets/media/684fc743e56b7112defd0641_Restaurant.avif" 
-               alt="Warm dining room at Da Maria with olive trees in terracotta planters and wooden tables">
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           6. BELLINI TIME & THIS WEEK'S SPECIAL (SCREENSHOT 4)
-           ==================================================================== -->
-      <section class="specials-section" id="specials">
-        <!-- Left: Bellini Time -->
-        <div class="bellini-col">
-          <h2 class="bellini-title">BELLINI<br>TIME</h2>
+      <section class="hero-section" id="hero" aria-label="Welcome to BOCCA">
+        <div class="hero-media-wrap">
+          <img src="assets/media/bocca_pizza_hero.jpg" alt="Artisan stone-baked pizza with mozzarella and fresh basil at BOCCA Dungarpur" class="hero-image">
+          <div class="hero-overlay"></div>
           
-          <div class="bellini-grid-inner">
-            <div class="bellini-photo-frame">
-              <img src="assets/media/68496b860d8ac42e0320f334_BelliniPeach.avif" 
-                   alt="Classic Peach Bellini cocktail in coupe glass with fresh peach slice">
+          <div class="hero-content">
+            <div class="hero-tagline-badge">
+              <span class="hero-tag-pip"></span>
+              Dungarpur, Rajasthan • Italian Coffee & Pizza House
             </div>
-
-            <div class="bellini-details-card">
-              <img src="assets/media/68494b415fb37a3ebced5e48_Bellini.webp" 
-                   alt="Vintage etched Bellini cocktail glass illustration" class="cocktail-etching">
-              
-              <div class="bellini-info-text">
-                <span class="highlight">Every Fridays &amp; Saturdays</span>
-                <span class="time">19:00 – 22:00</span>
-              </div>
-
-              <div class="bellini-info-text">
-                <span class="highlight">Where</span>
-                <span class="time">In our newly restructured Cocktail Lounge</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: This Week's Special & Cook's Note -->
-        <div class="weekly-specials-col">
-          <h3 class="specials-header-title">THIS WEEK'S SPECIAL</h3>
-
-          <!-- Special 1 -->
-          <div class="special-dish-item">
-            <h4 class="dish-name">Ravioli alla Nonna</h4>
-            <div class="special-etching-frame">
-              <img src="assets/media/68503ba4b472f3d032a60bd6_Ravioli 1.avif" 
-                   alt="Ravioli alla Nonna vintage etching">
-            </div>
-            <p class="special-dish-desc">
-              Tease special dishes, events, or limited-time items. Ravioli alla Nonna only until Thursday!
+            
+            <h1 class="hero-headline">
+              GOOD FOOD.<br>
+              GREAT COFFEE.<br>
+              BETTER MOMENTS.
+            </h1>
+            
+            <p class="hero-subtext">
+              From delicious pizzas and comforting pasta to handcrafted coffee, refreshing drinks, and indulgent desserts, discover your next favourite café moment at BOCCA.
             </p>
-          </div>
-
-          <!-- Special 2 -->
-          <div class="special-dish-item">
-            <h4 class="dish-name">Fresh Oysters</h4>
-            <div class="special-etching-frame">
-              <img src="assets/media/6832083bd0a1d1885e3901fb_Oysters.avif" 
-                   alt="Fresh oysters on shell vintage etching">
-            </div>
-            <p class="special-dish-desc">
-              Grilled oysters with lemon-basil butter—here for a moment, remembered for a lifetime.
-            </p>
-          </div>
-
-          <!-- Cook's Note -->
-          <div>
-            <h4 style="font-family: var(--font-serif); font-style: italic; font-size: 0.95rem; text-transform: uppercase; margin-bottom: 10px; color: var(--color-red);">
-              Cooks note
-            </h4>
-            <div class="cooks-note-card">
-              <div class="cooks-note-content">
-                <h5>Ciao Amici!</h5>
-                <p>
-                  The tomatoes are finally tasting like summer again—sun-kissed, juicy, and just the right kind of sweet. That can only mean one thing: pomodoro perfection is back on the menu! Come hungry, leave happy.
-                </p>
-                <span class="signature">Maria</span>
-              </div>
-              <div class="cooks-photo-frame">
-                <img src="assets/media/68495822f6912a16fea44b04_Chef Woman copy.avif" 
-                     alt="Chef Maria in the kitchen">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           7. ORDER ONLINE / ITALIAN PANTRY
-           ==================================================================== -->
-      <section class="pantry-section" id="pantry">
-        <div class="pantry-header-row">
-          <div>
-            <h2 class="pantry-title">ORDER<br>ONLINE</h2>
-          </div>
-          <div class="editorial-dropcap-block" style="max-width: 540px; margin-bottom: 0;">
-            <div class="dropcap-box">C</div>
-            <p class="dropcap-body">
-              Shop authentic Italian flavors—olive oils, fresh pasta, sauces &amp; more. Handpicked, delivered to your door. Taste Italy at home.
-            </p>
-          </div>
-        </div>
-
-        <div class="pantry-grid" id="pantryGrid">
-          <!-- Rendered dynamically by js/main.js -->
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           8. BOOK NOW RESERVATION FORM (SCREENSHOT 5)
-           ==================================================================== -->
-      <section class="reservation-section" id="reservation">
-        <!-- Houndstooth / Checkered Red Ribbon -->
-        <div class="checker-ribbon"></div>
-
-        <div class="reservation-top-header">
-          <h2>BOOK NOW</h2>
-          <div class="reservation-stamp">
-            <img src="assets/media/682096c723c440bb82f105d4_StampNew.svg" alt="Taste Award Stamp">
-          </div>
-        </div>
-
-        <div class="reservation-grid">
-          <!-- Left Description -->
-          <div class="editorial-dropcap-block">
-            <div class="dropcap-box">S</div>
-            <p class="dropcap-body">
-              tep into a world of vibrant tastes and cozy moments. Our tables are set, the kitchen's humming, and something special is always cooking. Whether it's date night or a family feast, your seat is just one click away.
-            </p>
-          </div>
-
-          <!-- Right Booking Form -->
-          <form class="reservation-form" id="mainBookingForm">
-            <div class="form-grid-fields">
-              <div class="form-field-group">
-                <label class="vintage-pill-label">.NAME</label>
-                <input type="text" name="name" class="vintage-input" placeholder="Jane Doe" required>
-              </div>
-
-              <div class="form-field-group">
-                <label class="vintage-pill-label">E-MAIL</label>
-                <input type="email" name="email" class="vintage-input" placeholder="jane.doe@webflow.com" required>
-              </div>
-
-              <div class="form-field-group">
-                <label class="vintage-pill-label">PHONE NUMBER</label>
-                <input type="tel" name="phone" class="vintage-input" placeholder="+39 432 483242" required>
-              </div>
-
-              <div class="form-field-group">
-                <label class="vintage-pill-label">PEOPLE</label>
-                <input type="text" name="people" class="vintage-input" placeholder="2 Persons" required>
-              </div>
-
-              <div class="form-field-group full-width">
-                <label class="vintage-pill-label">DATE &amp; TIME</label>
-                <input type="text" name="date_time" class="vintage-input" placeholder="dd.mm.yyyy --:--" required>
-              </div>
-            </div>
-
-            <div class="form-actions-row">
-              <button type="submit" class="btn-reserve-submit">RESERVE TABLE</button>
-              <a href="menu.html" class="btn-roll">
-                <span class="roll-text-default">VIEW MENU</span>
-                <span class="roll-text-hover">See Prices</span>
+            
+            <div class="hero-cta-group">
+              <a href="menu.html" class="btn-bocca btn-bocca-primary">
+                Explore Our Menu
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Bocca+Italian+Coffee+and+Pizza+House+Dungarpur" target="_blank" rel="noopener" class="btn-bocca btn-bocca-secondary data-maps-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Find Us
               </a>
             </div>
-          </form>
+
+            <div class="hero-hours-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Reported Hours: <strong>8:00 AM – 11:00 PM Daily</strong> (Pending Confirmation)</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- ====================================================================
-           9. FOOTER (SCREENSHOT 5)
+           4. FEATURED CATEGORIES
            ==================================================================== -->
-      <footer class="site-footer">
-        <div class="footer-nav-grid">
-          <!-- Col 1: Pages -->
-          <div>
-            <h4 class="footer-col-title">PAGES</h4>
-            <ul class="footer-col-links">
-              <li><a href="index.html" class="footer-link">Home</a></li>
-              <li><a href="menu.html" class="footer-link">Menu</a></li>
-              <li><a href="reservation.html" class="footer-link">Reservation</a></li>
-              <li><a href="about.html" class="footer-link">Restaurant</a></li>
-            </ul>
-          </div>
+      <section class="section-container" id="categories" aria-labelledby="categoriesHeading">
+        <div class="section-header">
+          <span class="section-eyebrow">Explore Our Kitchen</span>
+          <h2 class="section-title" id="categoriesHeading">Featured Categories</h2>
+          <div class="section-divider"></div>
+          <p class="section-description">
+            Discover a wide variety of handcrafted beverages, oven-baked pizzas, comforting Italian plates, and delicious café specials.
+          </p>
+        </div>
 
-          <!-- Col 2: Utility -->
-          <div>
-            <h4 class="footer-col-title">UTILITY</h4>
-            <ul class="footer-col-links">
-              <li><a href="#" class="footer-link">License</a></li>
-              <li><a href="#" class="footer-link">Changelog</a></li>
-              <li><a href="#" class="footer-link">Styleguide</a></li>
-            </ul>
-          </div>
+        <div class="category-cards-grid" id="featuredCategoriesGrid">
+          <!-- Populated dynamically by bocca-app.js from FEATURED_CATEGORIES -->
+          <a href="menu.html?category=pizza" class="category-tile-card">
+            <div class="category-tile-image">
+              <img src="assets/media/bocca_pizza_hero.jpg" alt="Pizza at BOCCA" loading="lazy">
+            </div>
+            <div class="category-tile-content">
+              <h3 class="category-tile-title">Pizza</h3>
+              <span class="category-tile-count">8 Varieties</span>
+            </div>
+          </a>
+          <a href="menu.html?category=pasta" class="category-tile-card">
+            <div class="category-tile-image">
+              <img src="assets/media/bocca_pasta_artisan.jpg" alt="Pasta at BOCCA" loading="lazy">
+            </div>
+            <div class="category-tile-content">
+              <h3 class="category-tile-title">Pasta</h3>
+              <span class="category-tile-count">6 Varieties</span>
+            </div>
+          </a>
+          <a href="menu.html?category=burgers" class="category-tile-card">
+            <div class="category-tile-image">
+              <img src="assets/media/bocca_burger_starters.jpg" alt="Burgers at BOCCA" loading="lazy">
+            </div>
+            <div class="category-tile-content">
+              <h3 class="category-tile-title">Burgers</h3>
+              <span class="category-tile-count">5 Varieties</span>
+            </div>
+          </a>
+          <a href="menu.html?category=sandwiches" class="category-tile-card">
+            <div class="category-tile-image">
+              <img src="assets/media/bocca_burger_starters.jpg" alt="Sandwiches at BOCCA" loading="lazy">
+            </div>
+            <div class="category-tile-content">
+              <h3 class="category-tile-title">Sandwiches</h3>
+              <span class="category-tile-count">5 Varieties</span>
+            </div>
+          </a>
+          <a href="menu.html?category=hot-coffee" class="category-tile-card">
+            <div class="category-tile-image">
+              <img src="assets/media/bocca_coffee_craft.jpg" alt="Coffee at BOCCA" loading="lazy">
+            </div>
+            <div class="category-tile-content">
+              <h3 class="category-tile-title">Coffee</h3>
+              <span class="category-tile-count">5 Varieties</span>
+            </div>
+          </a>
+          <a href="menu.html?category=iced-coffee" class="category-tile-card">
+            <div class="category-tile-image">
+              <img src="assets/media/bocca_coffee_craft.jpg" alt="Iced Coffee at BOCCA" loading="lazy">
+            </div>
+            <div class="category-tile-content">
+              <h3 class="category-tile-title">Iced Coffee</h3>
+              <span class="category-tile-count">5 Varieties</span>
+            </div>
+          </a>
+          <a href="menu.html?category=milkshakes" class="category-tile-card">
+            <div class="category-tile-image">
+              <img src="assets/media/bocca_shakes_dessert.jpg" alt="Milkshakes at BOCCA" loading="lazy">
+            </div>
+            <div class="category-tile-content">
+              <h3 class="category-tile-title">Milkshakes</h3>
+              <span class="category-tile-count">8 Varieties</span>
+            </div>
+          </a>
+          <a href="menu.html?category=cakes" class="category-tile-card">
+            <div class="category-tile-image">
+              <img src="assets/media/bocca_shakes_dessert.jpg" alt="Desserts & Cakes at BOCCA" loading="lazy">
+            </div>
+            <div class="category-tile-content">
+              <h3 class="category-tile-title">Desserts</h3>
+              <span class="category-tile-count">18 Varieties</span>
+            </div>
+          </a>
+        </div>
+      </section>
 
-          <!-- Col 3: Socials -->
-          <div>
-            <h4 class="footer-col-title">SOCIALS</h4>
-            <ul class="footer-col-links">
-              <li><a href="https://instagram.com" target="_blank" rel="noopener" class="footer-link">Instagram</a></li>
-              <li><a href="https://facebook.com" target="_blank" rel="noopener" class="footer-link">Facebook</a></li>
-              <li><a href="https://pinterest.com" target="_blank" rel="noopener" class="footer-link">Pinterest</a></li>
-            </ul>
-          </div>
+      <!-- ====================================================================
+           5. SIGNATURE SELECTIONS (Menu Candidates)
+           ==================================================================== -->
+      <section class="section-container" id="signatures" aria-labelledby="signaturesHeading" style="background: rgba(243, 236, 225, 0.45);">
+        <div class="section-header">
+          <span class="section-eyebrow">Chef's Highlights</span>
+          <h2 class="section-title" id="signaturesHeading">Signature Selections</h2>
+          <div class="section-divider"></div>
+          <p class="section-description">
+            A curated showcase of popular menu favorites crafted with fresh ingredients, balanced flavors, and passion for authentic café indulgence.
+          </p>
+        </div>
 
-          <!-- Col 4: Address -->
-          <div>
-            <h4 class="footer-col-title">ADRESS</h4>
-            <p class="footer-address-text">
-              Via del Sole 43<br>
-              98239 Roma<br>
-              Italy
+        <div class="items-card-grid" id="signatureSelectionsGrid">
+          <!-- Dynamically populated from SIGNATURE_SELECTIONS in menu-data.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="menu.html" class="btn-bocca btn-bocca-primary" style="padding: 14px 32px; font-size: 0.95rem;">
+            View Complete Menu (100+ Items) →
+          </a>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           6. ABOUT BOCCA SECTION
+           ==================================================================== -->
+      <section class="section-container" id="about" aria-labelledby="aboutHeading">
+        <div class="about-grid">
+          <div class="about-media-col">
+            <img src="assets/media/bocca_cafe_ambiance.jpg" alt="Warm, inviting café interior of BOCCA Italian Coffee & Pizza House" class="about-image" loading="lazy">
+            <div class="about-caption-stamp">
+              <strong>BOCCA</strong> • Dungarpur City
+            </div>
+          </div>
+          
+          <div class="about-text-col">
+            <span class="section-eyebrow">Our Story & Ambience</span>
+            <h2 class="section-title" id="aboutHeading" style="text-align: left; margin-bottom: 20px;">
+              Welcome to BOCCA Italian Coffee & Pizza House
+            </h2>
+            
+            <p class="about-lead">
+              Welcome to BOCCA Italian Coffee & Pizza House, a café destination in Dungarpur for people who enjoy good food, coffee, refreshing drinks, and sweet treats.
             </p>
+            
+            <p class="about-body">
+              Explore a menu featuring pizzas, pasta, burgers, sandwiches, handcrafted-style coffee beverages, milkshakes, and desserts. Whether you're dropping by for a morning espresso, catching up with friends over loaded nachos and pizza, or celebrating with an indulgent cake, BOCCA provides a relaxed, hospitable space in the heart of Dungarpur.
+            </p>
+
+            <div class="about-stats-row">
+              <div class="stat-box">
+                <span class="stat-number">17+</span>
+                <span class="stat-label">Menu Categories</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Handcrafted Items</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">Daily</span>
+                <span class="stat-label">8 AM – 11 PM</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="menu.html" class="btn-bocca btn-bocca-primary">Browse Full Menu</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Bocca+Italian+Coffee+and+Pizza+House+Dungarpur" target="_blank" rel="noopener" class="btn-bocca btn-bocca-secondary data-maps-link">
+                Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           7. GALLERY SECTION (Illustrative Food & Café Photography)
+           ==================================================================== -->
+      <section class="section-container" id="gallery" aria-labelledby="galleryHeading" style="background: rgba(243, 236, 225, 0.35);">
+        <div class="section-header">
+          <span class="section-eyebrow">Visual Moments</span>
+          <h2 class="section-title" id="galleryHeading">Café & Food Gallery</h2>
+          <div class="section-divider"></div>
+          <p class="section-description">
+            A glimpse into our kitchen's craft — from crispy crusts and slow-steeped espresso to decadent cakes and cool frappes.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/media/bocca_pizza_hero.jpg" alt="Handcrafted Margherita and Special Pizza" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Stone-Oven Pizza</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/media/bocca_coffee_craft.jpg" alt="Artisan Latte Art and Espresso Drinks" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Handcrafted Coffee</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/media/bocca_pasta_artisan.jpg" alt="Creamy Alfredo and Pink Sauce Pasta" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Artisan Pasta</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/media/bocca_burger_starters.jpg" alt="Paneer Burger, Loaded Nachos & Peri-Peri Fries" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Burgers & Starters</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/media/bocca_shakes_dessert.jpg" alt="Lotus Biscoff Shake & Gourmet Cakes" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Shakes & Cakes</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/media/bocca_cafe_ambiance.jpg" alt="Warm café dining room atmosphere" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Café Ambience</span>
+            </div>
           </div>
         </div>
 
-        <div class="footer-divider-line"></div>
+        <p class="gallery-note">
+          <em>Note: Images shown represent illustrative food photography and culinary presentation styling.</em>
+        </p>
+      </section>
 
-        <div class="footer-bottom-row">
-          <span>Made by Bastian</span>
-          <span>Powered by Webflow</span>
+      <!-- ====================================================================
+           8. LOCATION, HOURS & DIRECT CONTACT SECTION
+           ==================================================================== -->
+      <section class="section-container" id="location" aria-labelledby="locationHeading">
+        <div class="section-header">
+          <span class="section-eyebrow">Visit & Connect</span>
+          <h2 class="section-title" id="locationHeading">Location & Contact</h2>
+          <div class="section-divider"></div>
+          <p class="section-description">
+            Find us in Dungarpur city, call for takeout inquiries, or order directly to your doorstep.
+          </p>
+        </div>
+
+        <div class="location-wrapper">
+          <!-- Left: Business Info Card -->
+          <div class="location-card">
+            <h3 class="location-card-title">BOCCA Italian Coffee & Pizza House</h3>
+            
+            <div class="location-detail-group">
+              <div class="location-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="location-text">
+                <strong>Address:</strong>
+                <p class="data-address">Police Line Colony, Shivaji Nagar, opposite Nikunj Plaza, Dungarpur, Rajasthan 314001, India.</p>
+              </div>
+            </div>
+
+            <div class="location-detail-group">
+              <div class="location-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="location-text">
+                <strong>Telephone (Click to Call):</strong>
+                <p><a href="tel:+919976988888" class="data-phone-link phone-anchor">+91 99769 88888</a></p>
+                <small class="provisional-tag">Reported telephone number pending owner confirmation</small>
+              </div>
+            </div>
+
+            <div class="location-detail-group">
+              <div class="location-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="location-text">
+                <strong>Reported Opening Hours:</strong>
+                <p class="data-hours">8:00 AM – 11:00 PM Daily</p>
+                <small class="provisional-tag">Provisional schedule subject to confirmation</small>
+              </div>
+            </div>
+
+            <div class="location-actions">
+              <a href="https://www.google.com/maps/search/?api=1&query=Bocca+Italian+Coffee+and+Pizza+House+Dungarpur" target="_blank" rel="noopener" class="btn-bocca btn-bocca-primary data-maps-link">
+                Open in Google Maps
+              </a>
+              <a href="https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order" target="_blank" rel="noopener" class="btn-bocca btn-bocca-secondary data-zomato-link">
+                Order via Zomato
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Map Guidance / Visual -->
+          <div class="location-map-card">
+            <div class="map-embed-container">
+              <iframe 
+                title="BOCCA Italian Coffee & Pizza House Dungarpur Location Map"
+                src="https://maps.google.com/maps?q=Bocca+Italian+Coffee+and+Pizza+House+Dungarpur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="map-caption">
+              <strong>Opposite Nikunj Plaza, Shivaji Nagar</strong>, Dungarpur City, Rajasthan 314001
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           9. FOOTER
+           ==================================================================== -->
+      <footer class="bocca-footer">
+        <div class="footer-grid">
+          <!-- Col 1: Brand -->
+          <div class="footer-col">
+            <div class="footer-brand-title">BOCCA</div>
+            <div class="footer-brand-sub">Italian Coffee & Pizza House</div>
+            <p class="footer-desc">
+              A contemporary café destination in Dungarpur for people who appreciate delicious stone-oven pizzas, comforting pasta, handcrafted coffee, and sweet indulgences.
+            </p>
+          </div>
+
+          <!-- Col 2: Navigation Links -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Explore</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About BOCCA</a></li>
+              <li><a href="menu.html">Full Menu (100+ Items)</a></li>
+              <li><a href="index.html#categories">Featured Categories</a></li>
+              <li><a href="index.html#gallery">Food Photography</a></li>
+              <li><a href="index.html#location">Location & Hours</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Popular Categories -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Menu Highlights</h4>
+            <ul class="footer-links-list">
+              <li><a href="menu.html?category=pizza">Artisan Pizza</a></li>
+              <li><a href="menu.html?category=pasta">Creamy & Red Pasta</a></li>
+              <li><a href="menu.html?category=burgers">Burgers & Fries</a></li>
+              <li><a href="menu.html?category=hot-coffee">Hot Coffee & Espresso</a></li>
+              <li><a href="menu.html?category=iced-coffee">Iced Spanish Latte</a></li>
+              <li><a href="menu.html?category=milkshakes">Ferrero & Biscoff Shakes</a></li>
+              <li><a href="menu.html?category=cakes">Cakes & Pastries</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact & Hours -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Dungarpur Cafe</h4>
+            <p class="footer-contact-item">
+              <strong>Address:</strong><br>
+              <span class="data-address">Police Line Colony, Shivaji Nagar, opposite Nikunj Plaza, Dungarpur, Rajasthan 314001, India.</span>
+            </p>
+            <p class="footer-contact-item">
+              <strong>Telephone:</strong><br>
+              <a href="tel:+919976988888" class="data-phone-link phone-anchor">+91 99769 88888</a>
+            </p>
+            <p class="footer-contact-item">
+              <strong>Hours:</strong><br>
+              <span class="data-hours">8:00 AM – 11:00 PM Daily</span><br>
+              <small class="provisional-tag">Provisional schedule</small>
+            </p>
+            <div style="margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="https://www.google.com/maps/search/?api=1&query=Bocca+Italian+Coffee+and+Pizza+House+Dungarpur" target="_blank" rel="noopener" class="footer-action-pill data-maps-link">Google Maps</a>
+              <a href="https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order" target="_blank" rel="noopener" class="footer-action-pill data-zomato-link">Zomato Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © <span class="data-current-year">2026</span> BOCCA Italian Coffee & Pizza House, Dungarpur. All rights reserved.
+          </div>
+          <div class="footer-disclaimer">
+            Information compiled from provisional public listings pending independent confirmation by the business owner.
+          </div>
         </div>
       </footer>
 
-    </div><!-- /page-inner -->
-  </div><!-- /newspaper-wrapper -->
+    </div><!-- /.bocca-inner-frame -->
+  </div><!-- /.bocca-canvas -->
 
-  <!-- ======================================================================
-       INTERACTIVE OVERLAYS & MODALS
-       ====================================================================== -->
-
-  <!-- Backdrop Overlay -->
-  <div class="overlay-backdrop" id="overlayBackdrop"></div>
-
-  <!-- Menu Drawer (Slide From Left) -->
-  <aside class="menu-drawer" id="menuDrawer" aria-label="Main Navigation">
-    <div class="drawer-header">
-      <h3>MENU</h3>
-      <button type="button" class="drawer-close-btn" id="closeMenuBtn" onclick="closeMenuDrawer()" aria-label="Close Menu">✕</button>
-    </div>
-    <ul class="drawer-nav-list">
-      <li><a href="index.html" class="drawer-nav-link">HOME</a></li>
-      <li><a href="about.html" class="drawer-nav-link">ABOUT</a></li>
-      <li><a href="menu.html" class="drawer-nav-link">MENU</a></li>
-      <li><a href="reservation.html" class="drawer-nav-link">RESERVE</a></li>
-      <li><a href="about.html" class="drawer-nav-link">RESTAURANT</a></li>
-      <li><a href="#pantry" class="drawer-nav-link" onclick="closeMenuDrawer()">SHOP</a></li>
-    </ul>
-    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--page-border-color);">
-      <button type="button" class="btn-roll trigger-reserve-modal" onclick="openReservationModal()" style="width: 100%;">
-        <span class="roll-text-default">Book a Table</span>
-        <span class="roll-text-hover">Reserve Now</span>
+  <!-- ====================================================================
+       10. MOBILE NAVIGATION DRAWER
+       ==================================================================== -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <h3>BOCCA</h3>
+        <span>Italian Coffee & Pizza House</span>
+      </div>
+      <button type="button" class="mobile-drawer-close" id="closeMobileNav" aria-label="Close navigation drawer">
+        &times;
       </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About BOCCA</a></li>
+        <li><a href="menu.html" class="mobile-nav-link">Complete Menu</a></li>
+        <li><a href="index.html#categories" class="mobile-nav-link">Featured Categories</a></li>
+        <li><a href="index.html#signatures" class="mobile-nav-link">Signature Selections</a></li>
+        <li><a href="index.html#gallery" class="mobile-nav-link">Food Photography</a></li>
+        <li><a href="index.html#location" class="mobile-nav-link">Location & Hours</a></li>
+      </ul>
+
+      <div class="mobile-drawer-contact">
+        <h4>Dungarpur Café Contact</h4>
+        <p><a href="tel:+919976988888" class="data-phone-link phone-anchor">+91 99769 88888</a></p>
+        <p class="data-address" style="font-size: 0.85rem; color: var(--bocca-text-muted);">Opposite Nikunj Plaza, Shivaji Nagar, Dungarpur 314001</p>
+        <p style="font-size: 0.85rem; color: var(--bocca-text-muted);">Hours: 8:00 AM – 11:00 PM Daily (Provisional)</p>
+      </div>
+
+      <div class="mobile-drawer-actions">
+        <a href="menu.html" class="btn-bocca btn-bocca-primary" style="width: 100%; text-align: center;">
+          Browse Full Menu
+        </a>
+        <a href="https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order" target="_blank" rel="noopener" class="btn-bocca btn-bocca-secondary data-zomato-link" style="width: 100%; text-align: center;">
+          Order on Zomato
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Bocca+Italian+Coffee+and+Pizza+House+Dungarpur" target="_blank" rel="noopener" class="btn-bocca btn-bocca-secondary data-maps-link" style="width: 100%; text-align: center;">
+          Get Google Maps Directions
+        </a>
+      </div>
     </div>
   </aside>
 
-  <!-- Cart Drawer (Slide From Right) -->
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Artisanal Pantry Cart">
-    <div class="drawer-header">
-      <h3>YOUR BASKET</h3>
-      <button type="button" class="drawer-close-btn" id="closeCartBtn" onclick="closeCartDrawer()" aria-label="Close Cart">✕</button>
-    </div>
-    <div class="cart-items-container" id="cartItemsContainer">
-      <!-- Populated dynamically by js/main.js -->
-    </div>
-    <div class="cart-footer-bar">
-      <div class="cart-subtotal-row">
-        <span>Subtotal</span>
-        <span id="cartSubtotalDisplay">$0.00</span>
-      </div>
-      <button type="button" class="btn-checkout" onclick="handleCheckout()">
-        Proceed to Checkout
-      </button>
-    </div>
-  </aside>
-
-  <!-- Reservation Pop-up Modal -->
-  <div class="reservation-modal" id="reservationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="drawer-header">
-      <h3 id="modalTitle">RESERVE A TABLE</h3>
-      <button type="button" class="drawer-close-btn" id="closeReserveBtn" onclick="closeReservationModal()" aria-label="Close Reservation Modal">✕</button>
-    </div>
-
-    <p style="font-family: var(--font-serif); font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 24px;">
-      Join us in our candlelit dining room or restructured cocktail lounge. For private parties or same-day inquiries after 17:00, please ring us directly at <a href="tel:+492025550888" style="color: var(--color-red); font-weight: bold;">+49 202 555 0888</a>.
-    </p>
-
-    <form class="reservation-form" id="modalBookingForm">
-      <div class="form-grid-fields">
-        <div class="form-field-group">
-          <label class="vintage-pill-label">.NAME</label>
-          <input type="text" name="name" class="vintage-input" placeholder="Jane Doe" required>
-        </div>
-
-        <div class="form-field-group">
-          <label class="vintage-pill-label">E-MAIL</label>
-          <input type="email" name="email" class="vintage-input" placeholder="jane.doe@webflow.com" required>
-        </div>
-
-        <div class="form-field-group">
-          <label class="vintage-pill-label">PHONE NUMBER</label>
-          <input type="tel" name="phone" class="vintage-input" placeholder="+39 432 483242" required>
-        </div>
-
-        <div class="form-field-group">
-          <label class="vintage-pill-label">PEOPLE</label>
-          <input type="text" name="people" class="vintage-input" placeholder="2 Persons" required>
-        </div>
-
-        <div class="form-field-group full-width">
-          <label class="vintage-pill-label">DATE &amp; TIME</label>
-          <input type="text" name="date_time" class="vintage-input" placeholder="dd.mm.yyyy --:--" required>
-        </div>
-      </div>
-
-      <div class="form-actions-row">
-        <button type="submit" class="btn-reserve-submit" style="width: 100%;">CONFIRM RESERVATION</button>
-      </div>
-    </form>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <!-- ====================================================================
+       SCRIPTS
+       ==================================================================== -->
+  <script src="js/business.js"></script>
+  <script src="js/menu-data.js"></script>
+  <script src="js/bocca-app.js"></script>
 </body>
 </html>
