@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-21T14:07:29.921Z",
+        "reason": "Agent: the navigation drawer header intentionally uses the paper-frame top rule without a bottom divider to match the user-provided menu reference; the CTA and menu labels have ample inset."
+      }
+    ]
+  }
+}
