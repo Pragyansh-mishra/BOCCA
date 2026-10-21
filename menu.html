@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Da Maria Ristorante | Authentic Roman Cuisine</title>
+  <meta name="description" content="Explore our seasonal menu featuring handmade pastas, fresh seafood, slow-simmered sauces, and curated Tuscan wines.">
+  
+  <link rel="icon" type="image/png" href="assets/media/684ff15232c39faab7fcc3a5_Favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .menu-page-header {
+      padding: 48px 36px 36px 36px;
+      text-align: center;
+      border-bottom: 1.5px solid var(--page-border-color);
+    }
+    .menu-page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 800;
+      color: var(--color-red);
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: 0.03em;
+      margin-bottom: 12px;
+    }
+    .menu-page-subtitle {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .menu-grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1.5px solid var(--page-border-color);
+    }
+    @media (max-width: 850px) {
+      .menu-grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .menu-category-card {
+      padding: 40px 36px;
+      border-bottom: 1px solid var(--page-border-color);
+    }
+    .menu-category-card:nth-child(odd) {
+      border-right: 1.5px solid var(--page-border-color);
+    }
+    @media (max-width: 850px) {
+      .menu-category-card:nth-child(odd) {
+        border-right: none;
+      }
+    }
+    .category-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--color-red);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-red-border);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .menu-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .menu-item-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-text-dark);
+    }
+    .menu-item-price {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-red);
+    }
+    .menu-item-desc {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+    .menu-etching-banner {
+      padding: 30px;
+      text-align: center;
+      background: var(--color-paper-card);
+      border-bottom: 1.5px solid var(--page-border-color);
+    }
+    .menu-etching-banner img {
+      max-height: 140px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-backdrop"></div>
+
+  <div class="newspaper-wrapper">
+    <div class="page-inner">
+
+      <!-- Header -->
+      <header class="site-header">
+        <button type="button" class="header-menu-btn" id="openMenuBtn" aria-label="Open Navigation Menu">
+          <span class="menu-circle-badge">MENU</span>
+          <span class="cart-count-pill" id="cartCountPill">0</span>
+        </button>
+
+        <a href="index.html" class="header-brand">
+          <h1>DA MARIA</h1>
+          <span class="brand-sub">Restaurant</span>
+        </a>
+
+        <button type="button" class="header-reserve-btn trigger-reserve-modal">
+          RESERVE
+        </button>
+      </header>
+
+      <!-- Menu Hero Title -->
+      <section class="menu-page-header">
+        <h1 class="menu-page-title">IL MENU</h1>
+        <p class="menu-page-subtitle">
+          Homemade with heirloom Italian ingredients, freshly kneaded daily, and served straight from Maria’s wood-fire kitchen.
+        </p>
+      </section>
+
+      <!-- Etching Banner -->
+      <div class="menu-etching-banner">
+        <img src="assets/media/6825f1bbfee29924b445132c_SpaghettiPlate.png" alt="Etching of Spaghetti Plate">
+      </div>
+
+      <!-- Menu Categories Grid -->
+      <main class="menu-grid-container">
+
+        <!-- Antipasti -->
+        <div class="menu-category-card">
+          <h2 class="category-title">
+            <span>Antipasti</span>
+            <span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Starter plates</span>
+          </h2>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Bruschetta ai Pomodorini</span>
+            <span class="menu-item-price">€12.00</span>
+          </div>
+          <p class="menu-item-desc">Toasted Altamura sourdough, heirloom Datterini tomatoes, wild garlic, early-harvest olive oil.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Burrata Pugliese con Fichi</span>
+            <span class="menu-item-price">€16.50</span>
+          </div>
+          <p class="menu-item-desc">Artisanal Puglia burrata, caramelised black mission figs, 24-month Parma prosciutto, balsamic glaze.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Carpaccio di Manzo</span>
+            <span class="menu-item-price">€18.00</span>
+          </div>
+          <p class="menu-item-desc">Thinly carved Piedmontese beef fillet, baby wild arugula, crispy capers, aged Parmigiano Reggiano.</p>
+        </div>
+
+        <!-- Primi Piatti -->
+        <div class="menu-category-card">
+          <h2 class="category-title">
+            <span>Primi Piatti</span>
+            <span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Fresh pasta</span>
+          </h2>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Tonnarelli Cacio e Pepe</span>
+            <span class="menu-item-price">€19.00</span>
+          </div>
+          <p class="menu-item-desc">Hand-pulled tonnarelli pasta, aged Pecorino Romano D.O.P., cracked Tellicherry black pepper.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Rigatoni alla Carbonara</span>
+            <span class="menu-item-price">€21.00</span>
+          </div>
+          <p class="menu-item-desc">Bronze-extruded rigatoni, crisp Roman guanciale, golden organic egg yolk emulsion, pecorino.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Ravioli alla Nonna</span>
+            <span class="menu-item-price">€23.00</span>
+          </div>
+          <p class="menu-item-desc">Handmade pasta parcels filled with fresh ricotta and garden spinach, tossed in browned sage butter.</p>
+        </div>
+
+        <!-- Secondi Piatti -->
+        <div class="menu-category-card">
+          <h2 class="category-title">
+            <span>Secondi Piatti</span>
+            <span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Mains</span>
+          </h2>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Saltimbocca alla Romana</span>
+            <span class="menu-item-price">€28.00</span>
+          </div>
+          <p class="menu-item-desc">Tender milk-fed veal scallopine wrapped in prosciutto and fresh sage, deglazed with dry Marsala.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Branzino al Forno</span>
+            <span class="menu-item-price">€32.00</span>
+          </div>
+          <p class="menu-item-desc">Pan-roasted Mediterranean sea bass fillet, Sicilian caper berries, crushed olives, roasted lemon.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Tagliata di Manzo al Rosmarino</span>
+            <span class="menu-item-price">€34.00</span>
+          </div>
+          <p class="menu-item-desc">Sliced grilled dry-aged ribeye, rosemary Maldon sea salt, roasted baby artichokes.</p>
+        </div>
+
+        <!-- Dolci & Bevande -->
+        <div class="menu-category-card">
+          <h2 class="category-title">
+            <span>Dolci &amp; Vini</span>
+            <span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Dessert &amp; Drinks</span>
+          </h2>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Tiramisù della Nonna</span>
+            <span class="menu-item-price">€10.00</span>
+          </div>
+          <p class="menu-item-desc">Savoiardi drenched in Roman espresso and dark rum, layered with whipped mascarpone cream.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Classic Peach Bellini</span>
+            <span class="menu-item-price">€14.00</span>
+          </div>
+          <p class="menu-item-desc">White peach purée, chilled Prosecco Superiore di Valdobbiadene, fresh peach slice.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Chianti Classico Riserva (Glass)</span>
+            <span class="menu-item-price">€12.00</span>
+          </div>
+          <p class="menu-item-desc">Aged 24 months in French oak, notes of dark cherries, leather, and wild violets.</p>
+        </div>
+
+      </main>
+
+      <!-- Bottom Reservation Callout -->
+      <section style="padding: 48px 36px; text-align: center; border-bottom: 1.5px solid var(--page-border-color);">
+        <h3 style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--color-red); margin-bottom: 12px;">READY TO DINE WITH US?</h3>
+        <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 24px;">Reserve your table online or call us directly at +49 202 555 0888.</p>
+        <button type="button" class="btn-roll trigger-reserve-modal">
+          <span class="roll-text-default">Book Table Now</span>
+          <span class="roll-text-hover">Reserve Seat</span>
+        </button>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-nav-grid">
+          <div>
+            <h4 class="footer-col-title">PAGES</h4>
+            <ul class="footer-col-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="menu.html" class="footer-link">Menu</a></li>
+              <li><a href="reservation.html" class="footer-link">Reservation</a></li>
+              <li><a href="about.html" class="footer-link">Restaurant</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">UTILITY</h4>
+            <ul class="footer-col-links">
+              <li><a href="#" class="footer-link">License</a></li>
+              <li><a href="#" class="footer-link">Changelog</a></li>
+              <li><a href="#" class="footer-link">Styleguide</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">SOCIALS</h4>
+            <ul class="footer-col-links">
+              <li><a href="https://instagram.com" target="_blank" rel="noopener" class="footer-link">Instagram</a></li>
+              <li><a href="https://facebook.com" target="_blank" rel="noopener" class="footer-link">Facebook</a></li>
+              <li><a href="https://pinterest.com" target="_blank" rel="noopener" class="footer-link">Pinterest</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">ADRESS</h4>
+            <p class="footer-address-text">
+              Via del Sole 43<br>98239 Roma<br>Italy
+            </p>
+          </div>
+        </div>
+        <div class="footer-divider-line"></div>
+        <div class="footer-bottom-row">
+          <span>Made by Bastian</span>
+          <span>Powered by Webflow</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Drawers & Modals -->
+  <div class="overlay-backdrop" id="overlayBackdrop"></div>
+
+  <aside class="menu-drawer" id="menuDrawer">
+    <div class="drawer-header">
+      <h3>MENU</h3>
+      <button type="button" class="drawer-close-btn" id="closeMenuBtn">✕</button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li><a href="index.html" class="drawer-nav-link">HOME</a></li>
+      <li><a href="about.html" class="drawer-nav-link">ABOUT</a></li>
+      <li><a href="menu.html" class="drawer-nav-link">MENU</a></li>
+      <li><a href="reservation.html" class="drawer-nav-link">RESERVE</a></li>
+    </ul>
+  </aside>
+
+  <!-- Reservation Modal -->
+  <div class="reservation-modal" id="reservationModal">
+    <div class="drawer-header">
+      <h3>RESERVE A TABLE</h3>
+      <button type="button" class="drawer-close-btn" id="closeReserveBtn">✕</button>
+    </div>
+    <form class="reservation-form">
+      <div class="form-grid-fields">
+        <div class="form-field-group">
+          <label class="vintage-pill-label">.NAME</label>
+          <input type="text" name="name" class="vintage-input" placeholder="Jane Doe" required>
+        </div>
+        <div class="form-field-group">
+          <label class="vintage-pill-label">E-MAIL</label>
+          <input type="email" name="email" class="vintage-input" placeholder="jane.doe@webflow.com" required>
+        </div>
+        <div class="form-field-group">
+          <label class="vintage-pill-label">PHONE NUMBER</label>
+          <input type="tel" name="phone" class="vintage-input" placeholder="+39 432 483242" required>
+        </div>
+        <div class="form-field-group">
+          <label class="vintage-pill-label">PEOPLE</label>
+          <input type="text" name="people" class="vintage-input" placeholder="2 Persons" required>
+        </div>
+        <div class="form-field-group full-width">
+          <label class="vintage-pill-label">DATE &amp; TIME</label>
+          <input type="text" name="date_time" class="vintage-input" placeholder="dd.mm.yyyy --:--" required>
+        </div>
+      </div>
+      <button type="submit" class="btn-reserve-submit" style="width: 100%;">CONFIRM RESERVATION</button>
+    </form>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

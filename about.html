@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Da Maria Ristorante | Our Heritage</title>
+  <meta name="description" content="Discover the story of Da Maria. Born in Rome in 1993, driven by a passion for slow-cooked sauces, hand-rolled pasta, and family hospitality.">
+  
+  <link rel="icon" type="image/png" href="assets/media/684ff15232c39faab7fcc3a5_Favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .about-hero-header {
+      padding: 48px 36px;
+      text-align: center;
+      border-bottom: 1.5px solid var(--page-border-color);
+    }
+    .about-team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      padding: 48px 36px;
+      border-bottom: 1.5px solid var(--page-border-color);
+    }
+    .team-member-card {
+      border: 1px solid var(--page-border-color);
+      background: var(--color-paper-card);
+      overflow: hidden;
+      text-align: center;
+    }
+    .team-member-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+    .team-member-info {
+      padding: 20px;
+    }
+    .team-member-name {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--color-red);
+      margin-bottom: 4px;
+    }
+    .team-member-role {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-backdrop"></div>
+
+  <div class="newspaper-wrapper">
+    <div class="page-inner">
+
+      <!-- Header -->
+      <header class="site-header">
+        <button type="button" class="header-menu-btn" id="openMenuBtn" aria-label="Open Navigation Menu">
+          <span class="menu-circle-badge">MENU</span>
+          <span class="cart-count-pill" id="cartCountPill">0</span>
+        </button>
+
+        <a href="index.html" class="header-brand">
+          <h1>DA MARIA</h1>
+          <span class="brand-sub">Restaurant</span>
+        </a>
+
+        <button type="button" class="header-reserve-btn trigger-reserve-modal">
+          RESERVE
+        </button>
+      </header>
+
+      <!-- Hero Header -->
+      <section class="about-hero-header">
+        <h1 class="section-title-large" style="margin-bottom: 16px;">OUR HERITAGE</h1>
+        <p style="font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; color: var(--color-red); max-width: 800px; margin: 0 auto 16px auto;">
+          "Cucinare è un atto d’amore, condividere il cibo è un atto di famiglia."
+        </p>
+        <p style="font-family: var(--font-body); font-size: 1.05rem; color: var(--color-text-muted); max-width: 780px; margin: 0 auto; line-height: 1.7;">
+          Founded in the quiet alleys of Rome in the winter of 1993, Da Maria began with just six wooden tables, a stone flour mill, and Nonna’s handwritten recipe notebook. Over three decades later, our pots still simmer at dawn, our bread is pulled warm from the stone hearth, and our door remains wide open for every traveler seeking the authentic taste of Italy.
+        </p>
+      </section>
+
+      <!-- Full-Width Dining Room Photo -->
+      <div style="height: 460px; overflow: hidden; border-bottom: 1.5px solid var(--page-border-color);">
+        <img src="assets/media/684fc743e56b7112defd0641_Restaurant.avif" 
+             alt="Da Maria Dining Hall" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Philosophy & Story -->
+      <section class="split-editorial-section">
+        <div class="menu-feature-col">
+          <h2 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-red); margin-bottom: 20px;">
+            THE WOOD &amp; WHEAT
+          </h2>
+          <div class="editorial-dropcap-block">
+            <div class="dropcap-box">F</div>
+            <p class="dropcap-body">
+              rom the volcanic soils of Campania to the ancient olive groves of Puglia, our pantry is sourced directly from independent growers. We believe the soul of Roman cuisine lies in restraint: when the olive oil is pressed this week, the tomatoes ripened on the vine, and the pecorino aged on pine shelves, every plate needs nothing more.
+            </p>
+          </div>
+          <p class="dropcap-body" style="margin-top: 10px;">
+            We do not follow culinary shortcuts or industrial machinery. Our pastas are extruded slowly through artisan bronze dies, creating a porous surface that catches every drop of rich sauce.
+          </p>
+        </div>
+
+        <div class="reserve-feature-col" style="background: var(--color-paper-card);">
+          <div class="about-red-badge-card" style="margin-bottom: 20px;">
+            <div class="meta-top">Philosophy</div>
+            <h3 style="font-family: var(--font-heading); font-size: 2.2rem; line-height: 1.1;">SLOW FOOD,<br>SACRED MOMENTS</h3>
+          </div>
+          <p style="font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.6; color: var(--color-text-dark); margin-bottom: 20px;">
+            Dining in Italy is not simply eating; it is an unhurried ritual of friendship, lively conversation, and shared memories that outlive the evening.
+          </p>
+          <div style="text-align: center; margin-top: auto;">
+            <a href="reservation.html" class="btn-roll" style="width: 100%;">
+              <span class="roll-text-default">Join Our Table</span>
+              <span class="roll-text-hover">Reserve Tonight</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Kitchen Team -->
+      <section style="padding: 36px 36px 0 36px; text-align: center;">
+        <h3 style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--color-red); text-transform: uppercase;">THE MASTERS BEHIND THE STOVE</h3>
+      </section>
+
+      <section class="about-team-grid">
+        <div class="team-member-card">
+          <img src="assets/media/68495822f6912a16fea44b04_Chef Woman copy.avif" alt="Maria Rossi - Head Chef">
+          <div class="team-member-info">
+            <h4 class="team-member-name">Maria Rossi</h4>
+            <span class="team-member-role">Founder &amp; Head Chef</span>
+          </div>
+        </div>
+
+        <div class="team-member-card">
+          <img src="assets/media/68493b54a80b07320ec3a5d8_Nonna.avif" alt="Nonna Vittoria - Recipe Guardian">
+          <div class="team-member-info">
+            <h4 class="team-member-name">Nonna Vittoria</h4>
+            <span class="team-member-role">Recipe Guardian &amp; Matriarch</span>
+          </div>
+        </div>
+
+        <div class="team-member-card">
+          <img src="assets/media/68493bc8c000cb600860ded6_Chef1.avif" alt="Marco Santoro - Pasta Master">
+          <div class="team-member-info">
+            <h4 class="team-member-name">Marco Santoro</h4>
+            <span class="team-member-role">Master Sfoglino (Pasta Maker)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-nav-grid">
+          <div>
+            <h4 class="footer-col-title">PAGES</h4>
+            <ul class="footer-col-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="menu.html" class="footer-link">Menu</a></li>
+              <li><a href="reservation.html" class="footer-link">Reservation</a></li>
+              <li><a href="about.html" class="footer-link">Restaurant</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">UTILITY</h4>
+            <ul class="footer-col-links">
+              <li><a href="#" class="footer-link">License</a></li>
+              <li><a href="#" class="footer-link">Changelog</a></li>
+              <li><a href="#" class="footer-link">Styleguide</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">SOCIALS</h4>
+            <ul class="footer-col-links">
+              <li><a href="https://instagram.com" target="_blank" rel="noopener" class="footer-link">Instagram</a></li>
+              <li><a href="https://facebook.com" target="_blank" rel="noopener" class="footer-link">Facebook</a></li>
+              <li><a href="https://pinterest.com" target="_blank" rel="noopener" class="footer-link">Pinterest</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">ADRESS</h4>
+            <p class="footer-address-text">
+              Via del Sole 43<br>98239 Roma<br>Italy
+            </p>
+          </div>
+        </div>
+        <div class="footer-divider-line"></div>
+        <div class="footer-bottom-row">
+          <span>Made by Bastian</span>
+          <span>Powered by Webflow</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Drawers & Modals -->
+  <div class="overlay-backdrop" id="overlayBackdrop"></div>
+
+  <aside class="menu-drawer" id="menuDrawer">
+    <div class="drawer-header">
+      <h3>MENU</h3>
+      <button type="button" class="drawer-close-btn" id="closeMenuBtn">✕</button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li><a href="index.html" class="drawer-nav-link">HOME</a></li>
+      <li><a href="about.html" class="drawer-nav-link">ABOUT</a></li>
+      <li><a href="menu.html" class="drawer-nav-link">MENU</a></li>
+      <li><a href="reservation.html" class="drawer-nav-link">RESERVE</a></li>
+    </ul>
+  </aside>
+
+  <!-- Reservation Modal -->
+  <div class="reservation-modal" id="reservationModal">
+    <div class="drawer-header">
+      <h3>RESERVE A TABLE</h3>
+      <button type="button" class="drawer-close-btn" id="closeReserveBtn">✕</button>
+    </div>
+    <form class="reservation-form">
+      <div class="form-grid-fields">
+        <div class="form-field-group">
+          <label class="vintage-pill-label">.NAME</label>
+          <input type="text" name="name" class="vintage-input" placeholder="Jane Doe" required>
+        </div>
+        <div class="form-field-group">
+          <label class="vintage-pill-label">E-MAIL</label>
+          <input type="email" name="email" class="vintage-input" placeholder="jane.doe@webflow.com" required>
+        </div>
+        <div class="form-field-group">
+          <label class="vintage-pill-label">PHONE NUMBER</label>
+          <input type="tel" name="phone" class="vintage-input" placeholder="+39 432 483242" required>
+        </div>
+        <div class="form-field-group">
+          <label class="vintage-pill-label">PEOPLE</label>
+          <input type="text" name="people" class="vintage-input" placeholder="2 Persons" required>
+        </div>
+        <div class="form-field-group full-width">
+          <label class="vintage-pill-label">DATE &amp; TIME</label>
+          <input type="text" name="date_time" class="vintage-input" placeholder="dd.mm.yyyy --:--" required>
+        </div>
+      </div>
+      <button type="submit" class="btn-reserve-submit" style="width: 100%;">CONFIRM RESERVATION</button>
+    </form>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
