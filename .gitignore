@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build and framework output
+.next/
+.next-dev/
+out/
+dist/
+build/
+coverage/
+.turbo/
+.vercel/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and runtime files
+*.log
+logs/
+*.pid
+*.pid.lock
+
+# macOS / editor files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
