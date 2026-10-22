@@ -1,15 +1,86 @@
 /* ==========================================================================
-   DA MARIA - MAIN CONTROLLER
+   BOCCA - MAIN CONTROLLER
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMarquee();
+  initMenuRender();
+  initPremiumMotion();
   initCart();
   initReservationForm();
   initPantryRender();
   initParallaxEffects();
   setupGlobalEvents();
 });
+
+function initPremiumMotion() {
+  const revealTargets = document.querySelectorAll([
+    '.hero-story-card', '.split-editorial-section', '.about-section',
+    '.specials-section', '.pantry-section', '.reservation-section',
+    '.site-footer', '.menu-page-header', '.menu-etching-banner',
+    '.menu-category-card', '.booking-page-wrap', '.about-hero-header',
+    '.about-team-grid', '.about-team-grid .team-member-card'
+  ].join(','));
+
+  document.body.classList.add('motion-ready');
+  revealTargets.forEach((element, index) => {
+    element.classList.add('reveal-on-scroll');
+    if (element.classList.contains('menu-category-card') || element.classList.contains('team-member-card')) {
+      element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 45}ms`);
+    }
+  });
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        currentObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    revealTargets.forEach(element => observer.observe(element));
+  } else {
+    revealTargets.forEach(element => element.classList.add('is-visible'));
+  }
+
+  const header = document.querySelector('.site-header');
+  let ticking = false;
+  const updateHeader = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 24);
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateHeader();
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', link.getAttribute('href'));
+  });
+}
+
+function initMenuRender() {
+  const menuGrid = document.getElementById('menuCategoriesGrid');
+  if (!menuGrid || typeof MENU_CATEGORIES === 'undefined') return;
+
+  menuGrid.innerHTML = MENU_CATEGORIES.map(({ category, items }) => `
+    <div class="menu-category-card">
+      <h2 class="category-title"><span>${category}</span></h2>
+      ${items.map(({ name }) => `
+        <div class="menu-item-row"><span class="menu-item-name">${name}</span></div>
+      `).join('')}
+    </div>
+  `).join('');
+}
 
 /* --------------------------------------------------------------------------
    1. Seamless Marquee Cloner
@@ -136,7 +207,7 @@ function initPantryRender() {
 let cart = [];
 
 function initCart() {
-  const saved = localStorage.getItem('da_maria_cart');
+  const saved = localStorage.getItem('bocca_cart');
   if (saved) {
     try {
       cart = JSON.parse(saved);
@@ -148,7 +219,7 @@ function initCart() {
 }
 
 function saveCart() {
-  localStorage.setItem('da_maria_cart', JSON.stringify(cart));
+  localStorage.setItem('bocca_cart', JSON.stringify(cart));
   updateCartUI();
 }
 
@@ -235,7 +306,7 @@ window.handleCheckout = function() {
     return;
   }
   const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  showToast(`Grazie! Order of $${total.toFixed(2)} received. Preparation in Rome beginning!`);
+  showToast(`Thank you! Your BOCCA order of $${total.toFixed(2)} was received.`);
   cart = [];
   saveCart();
   closeAllModals();

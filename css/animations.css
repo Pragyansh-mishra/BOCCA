@@ -142,3 +142,93 @@
 .special-dish-item:hover .dish-name {
   color: var(--color-red);
 }
+
+/* Premium motion layer: short, interruptible, and disabled for reduced motion. */
+:root {
+  --ease-premium-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-premium-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.motion-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms var(--ease-premium-out), transform 700ms var(--ease-premium-out);
+}
+
+.motion-ready .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-ready .menu-category-card,
+.motion-ready .about-team-grid .team-member-card {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.site-header {
+  transition: transform 260ms var(--ease-premium-out), background-color 260ms ease, box-shadow 260ms ease;
+}
+
+.site-header.is-scrolled {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(48, 34, 31, 0.12);
+}
+
+.btn-roll,
+.header-reserve-btn,
+.header-menu-btn,
+.cart-count-pill,
+.drawer-close-btn,
+.btn-reserve-submit {
+  transition: transform 160ms var(--ease-premium-out), color 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+}
+
+.btn-roll:active,
+.header-reserve-btn:active,
+.header-menu-btn:active,
+.drawer-close-btn:active,
+.btn-reserve-submit:active {
+  transform: scale(0.97);
+}
+
+.hero-image-frame,
+.about-image-col,
+.bellini-photo-frame,
+.special-etching-frame,
+.menu-etching-frame,
+.phone-etching-frame {
+  overflow: hidden;
+}
+
+.hero-image-frame img,
+.about-image-col img,
+.bellini-photo-frame img,
+.special-etching-frame img,
+.menu-etching-frame img,
+.phone-etching-frame img {
+  transition: transform 900ms var(--ease-premium-out), filter 500ms ease;
+}
+
+.hero-image-frame:hover img,
+.about-image-col:hover img,
+.bellini-photo-frame:hover img,
+.special-etching-frame:hover img,
+.menu-etching-frame:hover img,
+.phone-etching-frame:hover img {
+  transform: scale(1.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  .motion-ready .reveal-on-scroll,
+  .motion-ready .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}

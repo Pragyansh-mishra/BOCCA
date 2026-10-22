@@ -3,227 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-=======
   <title>Menu — BOCCA Italian Coffee &amp; Pizza House</title>
-  <meta name="description" content="Explore the BOCCA Italian Coffee &amp; Pizza House menu in Dungarpur, Rajasthan.">
->>>>>>> 4c9bd4f (change in scrolling and use jsx in that)
+  <meta name="description" content="Explore the BOCCA menu in Dungarpur, including pizza, pasta, burgers, sandwiches, coffee, refreshing beverages, milkshakes, cakes, and desserts.">
   
-  <title>Menu — BOCCA Italian Coffee & Pizza House | Dungarpur</title>
-  <meta name="description" content="Browse the complete menu of BOCCA in Dungarpur, Rajasthan. 17 categories including stone-oven pizzas, artisan pasta, burgers, sandwiches, hot & iced coffees, milkshakes, and cakes.">
-  <meta name="keywords" content="BOCCA Menu, BOCCA Dungarpur Menu, Pizza Menu Dungarpur, Cafe Menu Rajasthan, Coffee BOCCA">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="restaurant.menu">
-  <meta property="og:title" content="Menu — BOCCA Italian Coffee & Pizza House | Dungarpur">
-  <meta property="og:description" content="Discover 100+ items across 17 categories: pizzas, pastas, burgers, open toasts, specialty coffees, milkshakes, and gourmet desserts.">
-  <meta property="og:image" content="assets/media/bocca_pizza_hero.jpg">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/media/684ff15232c39faab7fcc3a5_Favicon.png">
-
-  <!-- Google Fonts & Stylesheet -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="css/bocca.css">
-
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
   <style>
-    /* Specific Menu Page Enhancements */
-    .menu-header-hero {
-      padding: 48px 24px 32px 24px;
+    .menu-page-header {
+      padding: 48px 36px 36px 36px;
       text-align: center;
-      background: rgba(243, 236, 225, 0.4);
-      border-bottom: 1.5px solid var(--bocca-border-strong);
+      border-bottom: 1.5px solid var(--page-border-color);
     }
-    
     .menu-page-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 8vw, 7rem);
       font-weight: 800;
-      color: var(--bocca-terracotta);
-      letter-spacing: -0.01em;
-      line-height: 1.05;
-      margin-bottom: 12px;
+      color: var(--color-red);
       text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: 0.03em;
+      margin-bottom: 12px;
     }
-
-    .menu-page-desc {
+    .menu-page-subtitle {
       font-family: var(--font-serif);
+      font-style: italic;
       font-size: 1.15rem;
-      color: var(--bocca-text-muted);
-      max-width: 720px;
-      margin: 0 auto 24px auto;
-      line-height: 1.5;
-    }
-
-    .menu-utility-toolbar {
-      max-width: 900px;
+      color: var(--color-text-muted);
+      max-width: 600px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
     }
-
-    .search-box-wrapper {
-      position: relative;
-      width: 100%;
+    .menu-grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1.5px solid var(--page-border-color);
     }
-
-    .search-box-wrapper input {
-      width: 100%;
-      padding: 16px 20px 16px 52px;
-      font-size: 1.05rem;
-      font-family: var(--font-sans);
-      border: 1.5px solid var(--bocca-border-strong);
-      border-radius: var(--radius-sm);
-      background: var(--bocca-white);
-      color: var(--bocca-text-main);
-      box-shadow: 0 4px 12px rgba(32, 21, 19, 0.05);
-      transition: all 0.2s ease;
+    @media (max-width: 850px) {
+      .menu-grid-container {
+        grid-template-columns: 1fr;
+      }
     }
-
-    .search-box-wrapper input:focus {
-      outline: none;
-      border-color: var(--bocca-terracotta-dark);
-      box-shadow: 0 6px 18px rgba(200, 64, 40, 0.15);
+    .menu-category-card {
+      padding: 40px 36px;
+      border-bottom: 1px solid var(--page-border-color);
     }
-
-    .search-icon-svg {
-      position: absolute;
-      left: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--bocca-terracotta);
-      pointer-events: none;
+    .menu-category-card:nth-child(odd) {
+      border-right: 1.5px solid var(--page-border-color);
     }
-
-    .menu-filter-section {
-      padding: 24px 20px;
-      background: var(--bocca-cream);
-      border-bottom: 1px solid var(--bocca-border);
-      position: sticky;
-      top: 64px;
-      z-index: 80;
-      backdrop-filter: blur(10px);
+    @media (max-width: 850px) {
+      .menu-category-card:nth-child(odd) {
+        border-right: none;
+      }
     }
-
-    .pills-scroll-container {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 6px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--bocca-terracotta) transparent;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .pills-scroll-container::-webkit-scrollbar {
-      height: 4px;
-    }
-
-    .pills-scroll-container::-webkit-scrollbar-thumb {
-      background: var(--bocca-terracotta);
-      border-radius: 4px;
-    }
-
-    .category-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      font-family: var(--font-sans);
-      color: var(--bocca-espresso);
-      background: var(--bocca-cream-card);
-      border: 1px solid var(--bocca-border);
-      border-radius: var(--radius-pill);
-      white-space: nowrap;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-    }
-
-    .category-pill:hover,
-    .category-pill.active {
-      background: var(--bocca-terracotta);
-      color: var(--bocca-white);
-      border-color: var(--bocca-terracotta);
-      box-shadow: 0 2px 8px rgba(200, 64, 40, 0.2);
-    }
-
-    .category-pill .pill-count {
-      font-size: 0.75rem;
-      opacity: 0.8;
-      background: rgba(0, 0, 0, 0.1);
-      padding: 1px 6px;
-      border-radius: 999px;
-    }
-
-    .category-pill.active .pill-count {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .menu-status-bar {
+    .category-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--color-red);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-red-border);
+      margin-bottom: 24px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      border-bottom: 1px dashed var(--bocca-border);
-      font-size: 0.9rem;
-      color: var(--bocca-text-muted);
+      align-items: baseline;
     }
-
-    .empty-state-card {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 64px 20px;
-      background: var(--bocca-cream-card);
-      border: 1px dashed var(--bocca-border-strong);
-      border-radius: var(--radius-md);
-      margin: 20px 0;
+    .menu-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
     }
-
-    .empty-state-title {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      color: var(--bocca-terracotta);
-      margin-bottom: 10px;
-    }
-
-    .empty-state-desc {
+    .menu-item-name {
       font-family: var(--font-serif);
-      color: var(--bocca-text-muted);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-text-dark);
+    }
+    .menu-item-price {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-red);
+    }
+    .menu-item-desc {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.45;
       margin-bottom: 20px;
+    }
+    .menu-etching-banner {
+      padding: 30px;
+      text-align: center;
+      background: var(--color-paper-card);
+      border-bottom: 1.5px solid var(--page-border-color);
+    }
+    .menu-etching-banner img {
+      max-height: 140px;
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
 
-  <!-- Main Canvas -->
-  <div class="bocca-canvas">
-    <div class="bocca-inner-frame">
+  <div class="site-backdrop"></div>
 
-      <!-- Provisional Banner -->
-      <aside class="provisional-notice-banner" aria-label="Provisional Information Notice">
-        <strong>Business Notice:</strong> Dungarpur City location (Opp. Nikunj Plaza). Contact & hours are compiled from public listings pending owner confirmation.
-        <a href="tel:+919976988888" class="data-phone-link" style="color: inherit; text-decoration: underline; margin-left: 8px;">+91 99769 88888</a>
-      </aside>
+  <div class="newspaper-wrapper">
+    <div class="page-inner">
 
-<<<<<<< HEAD
-      <!-- Navigation Bar -->
-      <header class="bocca-nav" id="mainHeader">
-        <a href="index.html" class="nav-brand-group" aria-label="BOCCA Home">
-          <div class="nav-brand-badge">
-            <span class="nav-brand-title">BOCCA</span>
-            <span class="nav-brand-subtitle">Italian Coffee & Pizza House</span>
-          </div>
-=======
       <!-- Header -->
       <header class="site-header">
-        <button type="button" class="header-menu-btn" id="openMenuBtn" aria-label="Open Navigation Menu" aria-controls="menuDrawer" aria-expanded="false">
+        <button type="button" class="header-menu-btn" id="openMenuBtn" aria-label="Open Navigation Menu">
           <span class="menu-circle-badge">MENU</span>
           <span class="cart-count-pill" id="cartCountPill">0</span>
         </button>
@@ -231,316 +122,157 @@
         <a href="index.html" class="header-brand">
           <h1>BOCCA</h1>
           <span class="brand-sub">Italian Coffee &amp; Pizza House</span>
->>>>>>> 4c9bd4f (change in scrolling and use jsx in that)
         </a>
 
-        <nav class="nav-links" aria-label="Main Navigation">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="menu.html" class="nav-link active">Menu</a>
-          <a href="index.html#gallery" class="nav-link">Gallery</a>
-          <a href="index.html#location" class="nav-link">Contact</a>
-        </nav>
-
-        <div class="nav-actions">
-          <a href="https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order" target="_blank" rel="noopener" class="btn-bocca btn-bocca-primary data-zomato-link" style="padding: 10px 18px; font-size: 0.85rem;">
-            Order Online (Zomato)
-          </a>
-          
-          <button type="button" class="nav-menu-toggle" id="openMobileNav" aria-label="Open Mobile Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+        <button type="button" class="header-reserve-btn trigger-reserve-modal">
+          RESERVE
+        </button>
       </header>
 
-<<<<<<< HEAD
-      <!-- Menu Header Hero -->
-      <section class="menu-header-hero">
-        <span class="section-eyebrow">Dungarpur Kitchen</span>
-        <h1 class="menu-page-title">The Complete Menu</h1>
-        <p class="menu-page-desc">
-          Explore all 17 categories of artisanal pizzas, comforting pastas, gourmet burgers, open toasts, specialty espresso, milkshakes, and cakes freshly prepared at BOCCA.
-=======
       <!-- Menu Hero Title -->
       <section class="menu-page-header">
-        <h1 class="menu-page-title">BOCCA MENU</h1>
+        <h1 class="menu-page-title">IL MENU</h1>
         <p class="menu-page-subtitle">
-          Explore BOCCA’s menu of coffee, pizza, pasta, snacks, refreshing drinks, and desserts.
->>>>>>> 4c9bd4f (change in scrolling and use jsx in that)
+          Pizza, pasta, coffee, refreshing beverages, milkshakes, cakes, desserts, and more at BOCCA in Dungarpur.
         </p>
-
-        <!-- Search Toolbar -->
-        <div class="menu-utility-toolbar">
-          <div class="search-box-wrapper">
-            <svg class="search-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input 
-              type="search" 
-              id="menuSearchInput" 
-              placeholder="Search items by name (e.g. Margherita, Alfredo, Spanish Latte, Biscoff, Paneer...)" 
-              aria-label="Search menu items"
-              autocomplete="off"
-            >
-          </div>
-          <div style="font-size: 0.85rem; color: var(--bocca-text-light);">
-            <em>Note: Actual item prices and availability are verified upon placing your order at the café or online via Zomato.</em>
-          </div>
-        </div>
       </section>
 
-      <!-- Sticky Category Filter Pills -->
-      <nav class="menu-filter-section" aria-label="Category Navigation">
-        <div class="pills-scroll-container" id="categoryPillsContainer">
-          <!-- Populated dynamically by bocca-app.js from MENU_CATEGORIES -->
-        </div>
-      </nav>
-
-      <!-- Results Status Bar -->
-      <div class="menu-status-bar">
-        <div>
-          Showing: <strong id="menuResultsCount">Loading items...</strong>
-        </div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <a href="tel:+919976988888" class="data-phone-link phone-anchor" style="font-size: 0.85rem;">📞 Call Café</a>
-          <span>•</span>
-          <a href="https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order" target="_blank" rel="noopener" class="data-zomato-link" style="color: var(--bocca-terracotta); font-weight: 700; text-decoration: none; font-size: 0.85rem;">
-            Order on Zomato ↗
-          </a>
-        </div>
+      <!-- Etching Banner -->
+      <div class="menu-etching-banner">
+        <img src="assets/images/rice.png" alt="BOCCA rice dish">
       </div>
 
-<<<<<<< HEAD
-      <!-- Menu Items Grid Container -->
-      <section class="section-container" style="padding-top: 32px; min-height: 500px;" aria-live="polite">
-        <div class="items-card-grid" id="menuResultsGrid">
-          <!-- Dynamically populated and filtered by bocca-app.js -->
-        </div>
-=======
       <!-- Menu Categories Grid -->
-      <main class="menu-grid-container">
+      <main class="menu-grid-container" id="menuCategoriesGrid">
+
+        <!-- Antipasti -->
         <div class="menu-category-card">
-          <h2 class="category-title"><span>Fries and Starters</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Snacks & starters</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Dirty Nachos</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Salted Fries</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Garlic Potato Bites</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Loaded Cheese Fries</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Mushroom Croquettes</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Onion Rings</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Peri Peri Fries</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Potato Wedges</span></div>
+          <h2 class="category-title">
+            <span>Antipasti</span>
+            <span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Starter plates</span>
+          </h2>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Bruschetta ai Pomodorini</span>
+            <span class="menu-item-price">€12.00</span>
+          </div>
+          <p class="menu-item-desc">Toasted Altamura sourdough, heirloom Datterini tomatoes, wild garlic, early-harvest olive oil.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Burrata Pugliese con Fichi</span>
+            <span class="menu-item-price">€16.50</span>
+          </div>
+          <p class="menu-item-desc">Artisanal Puglia burrata, caramelised black mission figs, 24-month Parma prosciutto, balsamic glaze.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Carpaccio di Manzo</span>
+            <span class="menu-item-price">€18.00</span>
+          </div>
+          <p class="menu-item-desc">Thinly carved Piedmontese beef fillet, baby wild arugula, crispy capers, aged Parmigiano Reggiano.</p>
         </div>
 
+        <!-- Primi Piatti -->
         <div class="menu-category-card">
-          <h2 class="category-title"><span>Sandwiches</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Freshly made</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Cheese Sandwich</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Corn & Cheese Sandwich</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Paneer Masala Sandwich</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Potato Sandwich</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Veg Sandwich</span></div>
+          <h2 class="category-title">
+            <span>Primi Piatti</span>
+            <span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Fresh pasta</span>
+          </h2>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Tonnarelli Cacio e Pepe</span>
+            <span class="menu-item-price">€19.00</span>
+          </div>
+          <p class="menu-item-desc">Hand-pulled tonnarelli pasta, aged Pecorino Romano D.O.P., cracked Tellicherry black pepper.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Rigatoni alla Carbonara</span>
+            <span class="menu-item-price">€21.00</span>
+          </div>
+          <p class="menu-item-desc">Bronze-extruded rigatoni, crisp Roman guanciale, golden organic egg yolk emulsion, pecorino.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Ravioli alla Nonna</span>
+            <span class="menu-item-price">€23.00</span>
+          </div>
+          <p class="menu-item-desc">Handmade pasta parcels filled with fresh ricotta and garden spinach, tossed in browned sage butter.</p>
         </div>
 
+        <!-- Secondi Piatti -->
         <div class="menu-category-card">
-          <h2 class="category-title"><span>Burgers</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Burgers</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Cheese Burger</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Fatty Burger</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Mushroom & Cheese Burger</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Paneer Tikka Burger</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Veg Burger</span></div>
+          <h2 class="category-title">
+            <span>Secondi Piatti</span>
+            <span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Mains</span>
+          </h2>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Saltimbocca alla Romana</span>
+            <span class="menu-item-price">€28.00</span>
+          </div>
+          <p class="menu-item-desc">Tender milk-fed veal scallopine wrapped in prosciutto and fresh sage, deglazed with dry Marsala.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Branzino al Forno</span>
+            <span class="menu-item-price">€32.00</span>
+          </div>
+          <p class="menu-item-desc">Pan-roasted Mediterranean sea bass fillet, Sicilian caper berries, crushed olives, roasted lemon.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Tagliata di Manzo al Rosmarino</span>
+            <span class="menu-item-price">€34.00</span>
+          </div>
+          <p class="menu-item-desc">Sliced grilled dry-aged ribeye, rosemary Maldon sea salt, roasted baby artichokes.</p>
         </div>
 
+        <!-- Dolci & Bevande -->
         <div class="menu-category-card">
-          <h2 class="category-title"><span>Pasta</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Pasta</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Alfredo Pasta</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Aglio Olio Pasta</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Arrabbiata Pasta</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Pesto Cherry Tomato Pasta</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Pesto Pasta</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Pink Pasta</span></div>
+          <h2 class="category-title">
+            <span>Dolci &amp; Vini</span>
+            <span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Dessert &amp; Drinks</span>
+          </h2>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Tiramisù della Nonna</span>
+            <span class="menu-item-price">€10.00</span>
+          </div>
+          <p class="menu-item-desc">Savoiardi drenched in Roman espresso and dark rum, layered with whipped mascarpone cream.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Classic Peach Bellini</span>
+            <span class="menu-item-price">€14.00</span>
+          </div>
+          <p class="menu-item-desc">White peach purée, chilled Prosecco Superiore di Valdobbiadene, fresh peach slice.</p>
+
+          <div class="menu-item-row">
+            <span class="menu-item-name">Chianti Classico Riserva (Glass)</span>
+            <span class="menu-item-price">€12.00</span>
+          </div>
+          <p class="menu-item-desc">Aged 24 months in French oak, notes of dark cherries, leather, and wild violets.</p>
         </div>
 
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Open Toast</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Open toast</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Avocado Toast</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Basil Pesto Open Toast</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Cheese Chilli Toast</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Cheese Garlic Toast</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Chilli Cheese Toast</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Chilli Garlic Toast</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Creamy Mushroom Open Toast</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Garlic Bread Toast</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Pizza Bread Toast</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Pizza</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Pizza</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Bocca Special Pizza</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Corn & Cheese Pizza</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Margherita Pizza</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Paneer Pizza</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Paneer Tikka Pizza</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Truffle Mushroom Pizza</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Truffle Mushroom Premium Pizza</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Veggies Overloaded Pizza</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Wraps and Bites</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Wraps & bites</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">AOP Spicy Wrap</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Cheese Cigar Rolls</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Mushroom Wrap</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Paneer Wrap</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Veg Shawarma Wrap</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Hot Coffee</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Coffee</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Americano</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Espresso</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Honey Cinnamon Cappuccino</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Latte</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Macchiato</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Iced Coffee</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Coffee</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Iced Americano</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Iced Café Mocha</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Iced Latte</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Iced Spanish Latte</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Iced Tiramisu Creamy Latte</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Iced Tea</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Tea</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Bocca Special Hibiscus Iced Tea</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Cranberry Iced Tea</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Lemon Iced Tea</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Peach Iced Tea</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Strawberry Iced Tea</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Frappes</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Cold coffee</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Classic Frappe</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Nutella Frappe</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Milkshakes</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Milkshakes</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Bocca Special Ferrero Rocher Shake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Chocolate Milkshake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">KitKat Milkshake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Lotus Biscoff Shake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Nutella Shake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Oreo Milkshake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Strawberry Milkshake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Vanilla Milkshake</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Mocktails and Coolers</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Coolers</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Bocca Special Red Bull Mojito</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Classic Lemonade</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Mint Mojito</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Passion Fruit Cooler</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Piña Colada Mocktail</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Strawberry Cooler</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Sunrise Cooler</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Watermelon Mojito</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Hot Chocolate</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Hot chocolate</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Bocca Special Thick Hot Chocolate</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Dark Hot Chocolate</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Marshmallow Hot Chocolate</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Nutella Hot Chocolate</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Cakes</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Cakes</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Black Forest Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Blueberry Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Butterscotch Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Chocolate Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Chocolate Cake — 1 kg</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Dark Chocolate Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Fresh Fruit Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Hazelnut Chocolate Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Lotus Biscoff Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Mix Fruit Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Pento Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Pineapple Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Vanilla Cake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">White Forest Cake</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Cheesecakes and Pastries</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Desserts</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Berry Cheesecake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Biscoff Cheesecake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Blueberry Cheesecake</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Dark Chocolate Pastry</span></div>
-        </div>
-
-        <div class="menu-category-card">
-          <h2 class="category-title"><span>Additional Items</span><span style="font-size: 0.9rem; font-style: italic; text-transform: none; color: var(--color-text-muted);">Extras</span></h2>
-          <div class="menu-item-row"><span class="menu-item-name">Butter Cookies</span></div>
-          <div class="menu-item-row"><span class="menu-item-name">Bottled Water</span></div>
-        </div>
       </main>
 
       <!-- Bottom Reservation Callout -->
       <section style="padding: 48px 36px; text-align: center; border-bottom: 1.5px solid var(--page-border-color);">
-        <h3 style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--color-red); margin-bottom: 12px;">VISIT BOCCA</h3>
-        <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 24px;">Call BOCCA at +91 99769 88888.</p>
+        <h3 style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--color-red); margin-bottom: 12px;">READY TO DINE WITH US?</h3>
+        <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 24px;">Contact BOCCA at <a href="tel:+919976988888">+91 99769 88888</a> or find us on Google Maps.</p>
         <button type="button" class="btn-roll trigger-reserve-modal">
           <span class="roll-text-default">Book Table Now</span>
           <span class="roll-text-hover">Reserve Seat</span>
         </button>
->>>>>>> 4c9bd4f (change in scrolling and use jsx in that)
       </section>
 
       <!-- Footer -->
-      <footer class="bocca-footer">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <div class="footer-brand-title">BOCCA</div>
-            <div class="footer-brand-sub">Italian Coffee & Pizza House</div>
-            <p class="footer-desc">
-              Opposite Nikunj Plaza, Shivaji Nagar, Dungarpur, Rajasthan 314001. A warm café destination for handcrafted coffee, pizza, pasta, and desserts.
-            </p>
-          </div>
-
-          <div class="footer-col">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links-list">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="menu.html">Full Menu</a></li>
-              <li><a href="index.html#location">Location & Hours</a></li>
+      <footer class="site-footer">
+        <div class="footer-nav-grid">
+          <div>
+            <h4 class="footer-col-title">PAGES</h4>
+            <ul class="footer-col-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="menu.html" class="footer-link">Menu</a></li>
+              <li><a href="reservation.html" class="footer-link">Reservation</a></li>
+              <li><a href="about.html" class="footer-link">Restaurant</a></li>
             </ul>
           </div>
-<<<<<<< HEAD
-
-          <div class="footer-col">
-            <h4 class="footer-heading">Ordering & Inquiries</h4>
-            <p class="footer-contact-item">
-              <strong>Order Online:</strong><br>
-              <a href="https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order" target="_blank" rel="noopener" class="data-zomato-link" style="color: var(--bocca-cream);">Zomato Listing</a>
-            </p>
-            <p class="footer-contact-item">
-              <strong>Call Inquiries:</strong><br>
-              <a href="tel:+919976988888" class="data-phone-link phone-anchor">+91 99769 88888</a>
-            </p>
-            <p class="footer-contact-item">
-              <strong>Reported Schedule:</strong><br>
-              <span class="data-hours">8:00 AM – 11:00 PM Daily</span>
-=======
           <div>
             <h4 class="footer-col-title">UTILITY</h4>
             <ul class="footer-col-links">
@@ -560,70 +292,37 @@
           <div>
             <h4 class="footer-col-title">ADRESS</h4>
             <p class="footer-address-text">
-              Police Line Colony, Shivaji Nagar,<br>Opposite Nikunj Plaza<br>Dungarpur, Rajasthan 314001, India
->>>>>>> 4c9bd4f (change in scrolling and use jsx in that)
+              Police Line Colony, Shivaji Nagar<br>Opposite Nikunj Plaza<br>Dungarpur, Rajasthan 314001, India<br>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Bocca+Italian+Coffee+and+Pizza+House+Dungarpur" target="_blank" rel="noopener">Open in Google Maps</a>
             </p>
           </div>
         </div>
-
-        <div class="footer-bottom">
-          <div class="footer-copyright">
-            © <span class="data-current-year">2026</span> BOCCA Italian Coffee & Pizza House. All rights reserved.
-          </div>
-          <div class="footer-disclaimer">
-            Menu inventory is based on public listings pending independent confirmation with the café owner.
-          </div>
+        <div class="footer-divider-line"></div>
+        <div class="footer-bottom-row">
+          <span>Made by Bastian</span>
+          <span>Powered by Webflow</span>
         </div>
       </footer>
 
-    </div><!-- /.bocca-inner-frame -->
-  </div><!-- /.bocca-canvas -->
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
-  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
-    <div class="mobile-drawer-header">
-      <div class="mobile-drawer-brand">
-        <h3>BOCCA</h3>
-        <span>Italian Coffee & Pizza House</span>
-      </div>
-      <button type="button" class="mobile-drawer-close" id="closeMobileNav" aria-label="Close navigation drawer">&times;</button>
     </div>
+  </div>
 
-<<<<<<< HEAD
-    <div class="mobile-drawer-body">
-      <ul class="mobile-nav-list">
-        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-        <li><a href="about.html" class="mobile-nav-link">About BOCCA</a></li>
-        <li><a href="menu.html" class="mobile-nav-link active">Complete Menu</a></li>
-        <li><a href="index.html#categories" class="mobile-nav-link">Featured Categories</a></li>
-        <li><a href="index.html#gallery" class="mobile-nav-link">Food Photography</a></li>
-        <li><a href="index.html#location" class="mobile-nav-link">Location & Hours</a></li>
-      </ul>
+  <!-- Drawers & Modals -->
+  <div class="overlay-backdrop" id="overlayBackdrop"></div>
 
-      <div class="mobile-drawer-actions">
-        <a href="https://www.zomato.com/dungarpur/bocca-italian-coffee-and-pizza-house-1-dungarpur-locality/order" target="_blank" rel="noopener" class="btn-bocca btn-bocca-primary data-zomato-link" style="width: 100%; text-align: center;">
-          Order on Zomato
-        </a>
-        <a href="tel:+919976988888" class="btn-bocca btn-bocca-secondary data-phone-link" style="width: 100%; text-align: center;">
-          Call +91 99769 88888
-        </a>
-      </div>
-=======
-  <aside class="menu-drawer" id="menuDrawer" aria-hidden="true">
+  <aside class="menu-drawer" id="menuDrawer">
     <div class="drawer-header">
       <h3>MENU</h3>
       <button type="button" class="drawer-close-btn" id="closeMenuBtn">✕</button>
->>>>>>> 4c9bd4f (change in scrolling and use jsx in that)
     </div>
+    <ul class="drawer-nav-list">
+      <li><a href="index.html" class="drawer-nav-link">HOME</a></li>
+      <li><a href="about.html" class="drawer-nav-link">ABOUT</a></li>
+      <li><a href="menu.html" class="drawer-nav-link">MENU</a></li>
+      <li><a href="reservation.html" class="drawer-nav-link">RESERVE</a></li>
+    </ul>
   </aside>
 
-<<<<<<< HEAD
-  <!-- Scripts -->
-  <script src="js/business.js"></script>
-  <script src="js/menu-data.js"></script>
-  <script src="js/bocca-app.js"></script>
-=======
   <!-- Reservation Modal -->
   <div class="reservation-modal" id="reservationModal">
     <div class="drawer-header">
@@ -638,11 +337,11 @@
         </div>
         <div class="form-field-group">
           <label class="vintage-pill-label">E-MAIL</label>
-          <input type="email" name="email" class="vintage-input" placeholder="name@example.com" required>
+          <input type="email" name="email" class="vintage-input" placeholder="Your email" required>
         </div>
         <div class="form-field-group">
           <label class="vintage-pill-label">PHONE NUMBER</label>
-          <input type="tel" name="phone" class="vintage-input" placeholder="+91 00000 00000" required>
+          <input type="tel" name="phone" class="vintage-input" placeholder="+39 432 483242" required>
         </div>
         <div class="form-field-group">
           <label class="vintage-pill-label">PEOPLE</label>
@@ -659,6 +358,5 @@
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
->>>>>>> 4c9bd4f (change in scrolling and use jsx in that)
 </body>
 </html>
